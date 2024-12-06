@@ -37,13 +37,13 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   background-image: linear-gradient(230deg, #0e4cfd, #6a8eff); }
 
 .gradient-5 {
-  background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%); }
+  background-image: linear-gradient(to right, #f80029 0%, #ee6c6c 100%); }
 
 .gradient-6 {
   background-image: linear-gradient(135deg, #97ABFF 10%, #123597 100%); }
 
 .gradient-7 {
-  background-image: linear-gradient(135deg, #3C8CE7 10%, #00EAFF 100%); }
+  background-image: linear-gradient(135deg, #27f246 10%, #77f586 100%); }
 
 .gradient-8 {
   background-image: linear-gradient(135deg, #EE9AE5 10%, #5961F9 100%); }
@@ -14701,10 +14701,14 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
 
 /*# sourceMappingURL=style.css.map */
 
+/* การ login */
+
 /* ใส่พื้นหลัง Login */
-.h-100 {
+/* .h-100 {
   background: linear-gradient(135deg, #6a4fff, #7571f9, #a08eff);
-}
+} */
+
+
 /* เพิ่มเอฟเฟกต์การเปลี่ยนแปลง */
 .card.login-form {
   transition: all 0.3s ease; /* การเปลี่ยนแปลงที่ราบรื่นเมื่อมีการโต้ตอบ */
@@ -14728,6 +14732,9 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   color: white; /* เปลี่ยนสีข้อความของปุ่ม */
 }
 
+
+/* ตารางของบันทึกข้อความ */
+
 table {
 
   width: 100%;
@@ -14745,6 +14752,10 @@ table th {
   background-color: #7571f9;
   color: white;
   border-radius: 1px;
+}
+
+table td.hl{
+  color: #7571f9;
 }
 
 .delete-btn {
@@ -14778,6 +14789,89 @@ table th {
 /* ปรับขนาดของ input ให้เหมาะสม */
 #level {
   width: 150px; /* กำหนดความกว้างของ input */
+}
+
+/* ทำให้ไอคอนมองเห็นง่ายขึ้นก่อนการกด */
+.card-body i {
+  color: #f0f0f0; /* สีไอคอนก่อนกด (สีอ่อนเพื่อให้มองเห็นได้ชัด) */
+  transition: color 0.3s ease; /* เพิ่มการเปลี่ยนแปลงสีที่เนียน */
+}
+
+/* ทำให้ไอคอนเด่นขึ้นเมื่อผู้ใช้วางเมาส์ */
+a:hover i {
+  color: black; /* สีขาวเมื่อเมาส์อยู่เหนือไอคอน */
+}
+
+/* ไอคอนยังคงสีเดิมเมื่อคลิกไปที่ลิงก์ */
+a:focus, a:active i {
+  color: #ffffff; /* สีขาวเมื่อคลิก */
+}
+
+/* จัดช่องเลือกข้อมูลทั้ง3และปุ่มค้นหาให้อยู่บรรทัดเดียวกัน */
+
+/* จัดบันทึกข้อความโฟล์ว */
+.form-m {
+  display: flex; /* ใช้ Flexbox ในการจัดเรียง */
+  flex-wrap: wrap; /* ทำให้ยืดออกตามขนาดหน้าจอ */
+  align-items: center; /* จัดแนวตั้งให้อยู่กึ่งกลาง */
+  gap: 10px; /* เพิ่มระยะห่างระหว่างแต่ละองค์ประกอบ */
+  
+}
+
+.form-m label,
+.form-m input,
+.form-m button {
+  margin-right: 10px; /* เพิ่มช่องว่างระหว่างแต่ละองค์ประกอบ */
+}
+
+.form-m input {
+  flex: 1 0 150px; /* กำหนดให้ช่อง input มีความกว้างที่ยืดหยุ่น */
+}
+
+
+/* จัดการการเปลี่ยนหน้า */
+.datainfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.datainfo span {
+  margin-right: 10px; /* เพิ่มช่องว่างระหว่างข้อความ */
+}
+
+.datainfo input[type="search"] {
+    width: 150px; /* ปรับขนาดกล่องค้นหา */
+    margin-left: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: right;
+  align-items:center;
+  gap: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.page-numbers {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.btn-secondary{
+  background-color:#7571f9;
 }
 
 

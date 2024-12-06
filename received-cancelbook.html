@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>สิทธิ์การเข้าใช้งาน-เพิ่มข้อมูล</title>
+    <title>หนังสือเข้า-ยกเลิกหนังสือ</title>
     <!-- Favicon icon -->
     <link rel="icon" href="images/hatyai-u.png">
     
@@ -277,7 +277,7 @@
                             <i class="icon-grid menu-icon"></i><span class="nav-text">วัตถุประสงค์</span>
                         </a>
                         <ul aria-expanded="false">
-                           
+                            
                             <li><a href="purpose-add.html">เพิ่มข้อมูล</a></li>
                             <li><a href="purpose-remove.html">ลบข้อมูล</a></li>
                         </ul>
@@ -311,61 +311,105 @@
         <!--**********************************
             Content body start
         ***********************************-->
-          <!-- บันทึกข้อความ -->
+          <!-- หนังสือเข้า -->
         <div class="content-body">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">เมนู </a></li>
+                <li class="breadcrumb-item"><a href="index.html">/หนังสือเข้า </a></li>
+                <li class="breadcrumb-item"><a href="received-cancelbook.html">/ยกเลิกหนังสือ </a></li>
+            </ul>
             <div class="container-fluid mt-3">
+                <h3>หนังสือเข้า</h3> <br>
+                <h4>ยกเลิกหนังสือ</h4>
 
-                <h3>กำหนดสิทธิ์ผู้ใช้งาน </h3> <br>
-                <h4>เพิ่มข้อมูล</h4> <br>
-                <!-- กรอกข้อมูลพนักงาน -->
+                <!-- เพิ่มข้อมูล -->
+                <div class="form-group">
+
+                <div class="form-m">
+                <label for="yearsID" id="year">เลือกปีการศึกษา</label>
+                <input list="yearsID" class="form-control" id="years" name="yearsID" placeholder="----เลือกปีการศึกษา----">
+                <datalist id="yearsID">
+                    <option value="2561">
+                    <option value="2562">
+                    <option value="2563">
+                    <option value="2564">
+                    <option value="2565">
+                    <option value="2566">
+                    <option value="2567">
+                </datalist>
+
+
+                <label for="orgunit" id="org">หน่วยงาน</label>
+                <input list="orgunit" class="form-control" id="orgs" name="organization" placeholder="----เลือกหน่วยงาน----">
+                <datalist id="orgunit">
+                    <option value="คณะบริหารธุรกิจ">
+                    <option value="คณะศึกษาศาสตร์">
+                    <option value="สำนักพัฒนานักศึกษาและส่งเสริมศิลปวัฒนธรรม">
+                    <option value="ศูนย์นวัตกรรมและเทคโนโลยีดิจิทัล">
+                    <option value="สำนักสื่อสารองค์กร">
+                    <option value="สำนักวิจัยและพัฒนา">
+                </datalist>
+
+
+                <label for="status" id="st">สถานะหนังสือ</label>
+                <input list="bookstatus" class="form-control" id="sts" name="bookstatus" placeholder="----เลือกสถานะ----">
+                <datalist id="bookstatus">
+                    <option value="รออนุมัติ">
+                    <option value="อนุมัติแล้ว">
+                        
+                </datalist>
+                <div class="d-flex justify-content-center"><button type="button" class="btn btn-primary" ><i class="fa fa-search"></i> ค้นหา</button></div> 
+            
+            </div>
+            
+                </div><br>
+
+
+            <hr>
+                    <!-- ตารางแสดงรายการพนักงาน -->
+        <table id="employeeTable">
+            <div class="datainfo">
+                <span><b>Show</b> 2 </span> <span><b>entries</b></span>
+                <input type="search" class="form-control" placeholder="Search " aria-label="Search ">
+            </div>
+            
+
+            
+            <thead>
+                <tr>
+                    <th>เลขที่หนังสือ <i class="fa fa-sort" id="age-sort" style="cursor: pointer;"></i></th>
+                    <th>ชื่อเรื่อง <i class="fa fa-sort" id="age-sort" style="cursor: pointer;" ></i></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ตัวอย่างข้อมูล -->
+                <tr>
+             
+                    <td>ศนท.001/2567</td>
+                    <td class="hl">ขอติดตามความก้าวหน้าหลักสูตรของนักศึกษาและคณาจารย์</td>
+                    <td><i class="fa fa-print" style="color: #7571f9;"></i></td>
+                </tr>
+
+                <tr>
+             
+                    <td>ศนท.002/2567</td>
+                    <td class="hl">ขอติดตามความก้าวหน้าแผนงบประมาณ</td>
+                    <td><i class="fa fa-print" style="color: #7571f9;"></i></td>
+                </tr>
+            
+            </tbody>
            
-                    <div class="form-group">
-            
-                        <label for="department">ศูนย์/สำนักงาน</label>
-                        <input list="departments" id="department" name="department" class="form-control" placeholder="เลือกศูนย์/สำนักงาน" required="">
-                        <datalist id="departments">
-                            <option value="ศูนย์วิทยบริการหาดใหญ่">
-                            <option value="สำนักงานภูมิภาค">
-                            <option value="สำนักงานภายใน">
-                            <option value="ศูนย์การศึกษานอกระบบ">
-                            <option value="มหาวิทยาลัยหาดใหญ่">
-                        </datalist>
+        </table>
+
+        <div class="dataTables_info">Showing 1 to 1 of entries</div>
+        <div class="pagination">
+            <button class="btn btn-secondary" id="previous" onclick="changePage('previous')">Previous</button>
+            <div class="page-numbers" id="page-numbers"> 1 </div>
+            <button class="btn btn-secondary" id="next" onclick="changePage('next')">Next</button>
+        </div>
                     </div>
-        
-                    <div class="form-group">
-                        <label for="employeeId">รหัสพนักงาน</label>
-                        <input type="text" id="employeeId" name="employeeId" class="form-control" placeholder="กรอกรหัสพนักงาน" required="">
-                    </div>
-        
-                    <button type="submit" class="btn btn-primary">เพิ่มข้อมูล</button>
-               
-        
-                <hr>
-        
-                <h3>ข้อมูลพนักงานที่มีอยู่แล้ว</h3>
-                <table id="employeeTable">
-                    <thead>
-                        <tr>
-                    
-                            <th>รหัสพนักงาน</th>
-                            <th>ศูนย์/สำนักงาน</th>
-                           
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-            
-                    <td>001</td>
-                    <td>มหาวิทยาลัยหาดใหญ่</td>
-                    
-                    <td style="color: blue;"><button class="edit-btn" onclick="editRow(this)"><i class="fa fa-edit" style="color:blue;"></i></button>Edit</td>
-                    <td style="color: red;"><button class="delete-btn" onclick="deleteRow(this)"><i class="fa fa-trash"style="color:red;"></i></button>ลบ</td>
-                    </tr>
-                        <!-- ข้อมูลพนักงานที่แสดงในตารางจะถูกเพิ่มโดย JavaScript -->
-                    </tbody>
-                </table>
+                </form>
             </div>
             </div>
         </div>
@@ -426,7 +470,11 @@
 
 
 
-   
+    <script src="./js/dashboard/dashboard-1.js"></script>
+
+
+    
+
 </body>
 
 </html>
